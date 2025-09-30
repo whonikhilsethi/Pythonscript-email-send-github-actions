@@ -9,7 +9,7 @@ def email_send(workflow_name, repository_name):
     sender_password=os.getenv('SENDER_PASSWORD')
     reciever_email= os.getenv('RECIEVER_EMAIL')
 
-    subject= f"{ workflow_name } failed failed of { repository_name } "
+    subject= f"{ workflow_name } failed of { repository_name } "
     body= f" Hi, your Workflow has been failed named { workflow_name } of { repository_name }"
 
     message=MIMEMultipart()
