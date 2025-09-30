@@ -13,17 +13,17 @@ def email_send(workflow_name, repository_name):
     body= f" Hi, your Workflow has been failed named { workflow_name } of { repository_name }"
 
     message=MIMEMultipart()
-    message['FROM']= sender_email
-    message['TO']= reciever_email
-    message['SUBJECT']=subject
+    message['From']= sender_email
+    message['To']= reciever_email
+    message['Subject']=subject
     message.attach(MIMEText(body, "plain"))
 
 
     try:
         server= smtplib.SMTP("smtp.gmail.com", 587)
-        server.starttls
+        server.starttls()
         server.login(sender_email, sender_password)
-        text=message.as_string
+        text=message.as_string()
         server.sendmail(sender_email, reciever_email, text)
         server.quit()
 
