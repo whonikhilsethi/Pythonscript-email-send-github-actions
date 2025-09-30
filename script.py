@@ -15,7 +15,7 @@ def email_send(workflow_name, repository_name):
     message=MIMEMultipart()
     message['FROM']= sender_email
     message['TO']= reciever_email
-    message[subject]=subject
+    message['SUBJECT']=subject
     message.attach(MIMEText(body, "plain"))
 
 
